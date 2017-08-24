@@ -138,10 +138,10 @@ namespace ASampleApp
 
             var myMenuItemCommandParameter = (Dog)((MenuItem)sender).CommandParameter;
 
-            //MAHDI - just remove the specific item and the observable collection + INotifyPropertyChanged will auto-update the UI as necessary
+            //MA - just remove the specific item and the observable collection + INotifyPropertyChanged will auto-update the UI as necessary
             dogListPhotoViewModel.DeleteDogFromListCommand.Execute(myMenuItemCommandParameter);
 
-            //FormList.Remove(item); //MAHDI
+            //FormList.Remove(item); //MA
 
         }
     }

@@ -1,15 +1,4 @@
-﻿//using System;
-//namespace ASampleApp.Pages
-//{
-//    public class AddDogPhotoBlobPage
-//    {
-//        public AddDogPhotoBlobPage()
-//        {
-//        }
-//    }
-//}
-
-
+﻿
 using System;
 using System.IO;
 using System.Diagnostics;

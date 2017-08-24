@@ -19,10 +19,6 @@ namespace ASampleApp
         public static DogRepositoryBaseSixtyFour DogRepBaseSixtyFour { get; private set; }
 		public static DogRepositoryBlob DogRepBlob { get; private set; }
 
-
-
-
-
 		public static DogListMVVMPage MyDogListMVVMPage { get; set; }
         public static DogListPhotoPage MyDogListPhotoPage { get; set; }
         public static DogListPhotoBase64Page MyDogListPhotoBase64Page  { get;set;}

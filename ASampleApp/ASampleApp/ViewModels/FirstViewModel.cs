@@ -52,16 +52,6 @@ namespace ASampleApp
         void OnMyFavoriteAction()
         {
 
-            //OPTION 1 - RETURN BARLIZO
-            //this.FirstLabel = "BARLIZO";
-            //return;
-
-            //OPTION 2 - RETURN DATABASEPATH
-            //this.FirstLabel = FileAccessHelper.GetLocalFilePath("dogs.db3");
-            //return;
-
-            //OPTION 3 - RETURN DOG
-
             //ADD NEW DOG
             App.DogRep.AddNewDog(this.FirstEntryText, this.SecondEntryText);
 			AddLastDogToCosmosDBAsync();
@@ -72,14 +62,10 @@ namespace ASampleApp
 
             string _lastNameString = App.DogRep.GetLastDog().Name;
 
-            //NOT BOUND1
-            //            this.FirstLabel = System.String.Format("{0} added to the list!", _firstNameString);
-			//YES BOUND1
             string _lastNameStringAdd = System.String.Format("{0} added to the list!", _lastNameString);
             this.FirstLabel = _lastNameStringAdd;
 
             return;
-
 
         }
 
@@ -89,20 +75,6 @@ namespace ASampleApp
 			var myCosmosDog = DogConverter.ConvertToCosmosDog(myDog);
             await CosmosDB.CosmosDBService.PostCosmosDogAsync(myCosmosDog);
 		}
-
-
-//        private async Task OnMySecondFavoriteCommand()
-//        {
-
-//            var myDude = new Label();
-////            await myDude.Text = "hello";
-////            await ;
-////
-        //    await //need to do something that requires Async; 
-
-        //}
-
-
 
     }
 }

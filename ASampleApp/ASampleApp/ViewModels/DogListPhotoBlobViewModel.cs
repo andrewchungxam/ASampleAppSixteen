@@ -1,15 +1,4 @@
-﻿//using System;
-//namespace ASampleApp.ViewModels
-//{
-//    public class DogListPhotoBlobViewModel
-//    {
-//        public DogListPhotoBlobViewModel()
-//        {
-//        }
-//    }
-//}
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using ASampleApp.Models;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;

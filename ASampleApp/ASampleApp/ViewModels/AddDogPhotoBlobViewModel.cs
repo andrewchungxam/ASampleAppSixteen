@@ -1,16 +1,4 @@
-﻿//using System;
-//namespace ASampleApp.ViewModels
-//{
-//    public class AddDogPhotoBlobViewModel
-//    {
-//        public AddDogPhotoBlobViewModel()
-//        {
-//        }
-//    }
-//}
-
-
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using ASampleApp.CosmosDB;

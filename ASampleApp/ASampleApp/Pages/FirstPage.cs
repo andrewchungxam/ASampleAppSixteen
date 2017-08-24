@@ -8,8 +8,6 @@ namespace ASampleApp
 	public class FirstPage : BaseContentPage<FirstViewModel>
 	{
 
-//        Image _tempImage;
-//        String _tempImageSource;
 
 		Label _firstLabel;
 		Entry _firstEntry;
@@ -33,7 +31,6 @@ namespace ASampleApp
 
 		public FirstPage ()
 		{
- //           _tempImage = new Image();
 
             this.Title = "A Sample App 16";
 
@@ -75,7 +72,6 @@ namespace ASampleApp
                 Margin = 20,
 				Children =
 				{
-//                    _tempImage,
 
 
 					_firstLabel,
@@ -102,60 +98,13 @@ namespace ASampleApp
 
             Content = myScrollView;
 
-   //         Content = new StackLayout 
-   //         {
-			//	Margin = 20,
-			//	Children =
-			//	{
-			//		_firstLabel,
-			//		_firstEntry,
-   //                 _secondEntry,
-			//		_firstButton,
-			//		_goToDogListButton,
-			//		_emptyLabel,
-   //                 _addAddDogPhotoButton,
-   //                 _addAddDogPhotoURLButton,
-   //                 _goToDogPhotoListButton,
-   //                 _emptyLabel2,
-			//		_addAddDogPhotoBase64Button,
-   //                 _goToDogPhotoBase64ListButton
 
-
-			//	}
-
-			//};
 		}
 
 		protected override void OnAppearing ()
 		{
 
             Task.Run(async () => await BlobStorage.AzureBlobStorage.performBlobOperation());
-
-            //            var tempImageSource// = MyClass.getTheUrlFromBlob();
-
-            //            Task.Run(() => _tempImageSource = MyClass.getTheUrlFromBlob());
-
-            //BLOB STORAGE SAMPLE THAT WORKS BUT NOT NEEDED
-            //_tempImageSource = BlobStorage.AzureBlobStorage.getTheUrlFromBlob();
-			//_tempImage.Source = ImageSource.FromUri(new Uri("https://asampleappfive.blob.core.windows.net/my9container/HelloWorld.png"));
-
-
-            //VARIATIONS
-			//            _tempImage.Source = ImageSource.FromUri(new Uri("https://xamarin.com/content/images/pages/forms/example-app.png"));
-
-			//            _tempImage.Source = new Uri("https://asampleappfive.blob.core.windows.net/my8container/HelloWorld.png")
-
-			//            _tempImage.Source = ImageSource.FromUri(new Uri(_tempImageSource));
-
-			//			_tempImage.Source = new Uri("https://asampleappfive.blob.core.windows.net/my8container/HelloWorld.png");
-
-			//			bitmapImage.UriSource = new Uri("http://sweetapp.blob.core.windows.net/userprofiles/" + imagename, UriKind.RelativeOrAbsolute);
-			//https://stackoverflow.com/questions/22014384/getting-images-in-the-azure-blob-storage
-
-
-			//var bitmapImage = new BitmapImage();
-			//bitmapImage.UriSource = new Uri("http://sweetapp.blob.core.windows.net/userprofiles/" + imagename, UriKind.RelativeOrAbsolute);
-			//imgProf.Source = bitmapImage;
 
 			base.OnAppearing ();
 
@@ -179,11 +128,7 @@ namespace ASampleApp
 			_addAddDogPhotoURLButton.Clicked += OnAddDogPhotoURLButtonClicked;
             _addAddDogPhotoBase64Button.Clicked += OnAddDogPhotoBase64ButtonClicked;
 			_goToDogPhotoListButton.Clicked += OnAddDogPhotoListLButtonClicked;
-
-	//		_goToDogPhotoBase64ListButton.Clicked += OnAddDogPhotoBase64ListButtonClicked;
-
-
-
+			//_goToDogPhotoBase64ListButton.Clicked += OnAddDogPhotoBase64ListButtonClicked;
             _addAddDogPhotoBlobButton.Clicked += OnAddDogPhotoBlobButtonClicked;
             _goToDogPhotoBlobListButton.Clicked += OnAddDogPhotoBlogListButtonClicked;
 
@@ -197,26 +142,17 @@ namespace ASampleApp
 		{
 			base.OnDisappearing ();
 
-
-
 			//METHOD 1
-
 			//			_firstButton.Clicked -= OnFirstButtonClicked;
-
 			_goToDogListButton.Clicked -= OnToDogListClicked;
             _addAddDogPhotoButton.Clicked -= OnAddDogPhotoButtonClicked;
 			_addAddDogPhotoURLButton.Clicked -= OnAddDogPhotoURLButtonClicked;
 			_addAddDogPhotoBase64Button.Clicked -= OnAddDogPhotoBase64ButtonClicked;
 			_goToDogPhotoListButton.Clicked -= OnAddDogPhotoListLButtonClicked;
 	//		_goToDogPhotoBase64ListButton.Clicked -= OnAddDogPhotoBase64ListButtonClicked;
-
-
 			_addAddDogPhotoBlobButton.Clicked -= OnAddDogPhotoBlobButtonClicked;
 			_goToDogPhotoBlobListButton.Clicked -= OnAddDogPhotoBlogListButtonClicked;
-
-
 		}
-
 
 		private void OnAddDogPhotoButtonClicked(object sender, EventArgs e)
         {
@@ -229,23 +165,16 @@ namespace ASampleApp
 			Device.BeginInvokeOnMainThread (()=>Navigation.PushAsync (new AddDogPhotoURLPage()));	
 		}
 
-
-
-
-
 		//ADD PHOTO
 		private void OnAddDogPhotoBase64ButtonClicked(object sender, EventArgs e)
 		{
 			Device.BeginInvokeOnMainThread(() => Navigation.PushAsync(new AddDogPhotoBaseSixtyFourPage()));
 		}
 
-
-
 		private void OnAddDogPhotoBlobButtonClicked(object sender, EventArgs e)
 		{
 
             Device.BeginInvokeOnMainThread(() => Navigation.PushAsync(new AddDogPhotoBlobPage()));
-
 			//          Device.BeginInvokeOnMainThread(() => Navigation.PushAsync(new AddDogPhotoBlobPage()));
 			//          throw new NotImplementedException();
 		}
@@ -260,8 +189,6 @@ namespace ASampleApp
 		}
 
 
-
-
 		void OnToDogListClicked(object sender, EventArgs e)
 		{
 			//OPTION 1
@@ -270,7 +197,6 @@ namespace ASampleApp
 			//OPTION 2
             Device.BeginInvokeOnMainThread(() => Navigation.PushAsync(App.MyDogListMVVMPage));
 		}
-
 
 
 		void OnAddDogPhotoListLButtonClicked(object sender, EventArgs e)
@@ -297,30 +223,5 @@ namespace ASampleApp
 
 		}
 
-
-
-
-
-
-		//EventHandler OnToDogListClicked ()
-		//{
-		//	//throw new NotImplementedException ();
-		//	Device.BeginInvokeOnMainThread (()=> Navigation.PushAsync (new DogListPage()));
-		//}
-
-		//void OnFirstButtonClicked (object sender, EventArgs e)
-		//{
-		//	Console.WriteLine ("Hello there;");
-		//	string ft = _firstEntry.Text;
-
-		//	//SIMPLE ACTION 1
-		//	//Device.BeginInvokeOnMainThread (() => 
-		//	//                                _firstLabel.Text = ft
-		//	//                               );
-
-		//	//SIMPLE ACTION 2
-		//	//ViewModel.FirstLabel = "hi there!";
-
-		//}
 	}
 }

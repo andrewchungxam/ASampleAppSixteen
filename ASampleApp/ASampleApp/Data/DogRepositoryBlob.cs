@@ -1,15 +1,4 @@
-﻿//using System;
-//namespace ASampleApp.Data
-//{
-//    public class DogRepositoryBlob
-//    {
-//        public DogRepositoryBlob()
-//        {
-//        }
-//    }
-//}
-
-
+﻿
 using System;
 using System.Collections.Generic;
 using SQLite;

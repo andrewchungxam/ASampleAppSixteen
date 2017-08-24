@@ -6,7 +6,6 @@ namespace ASampleApp.CosmosDB
     public static class DogConverter
     {
         //https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/how-to-convert-a-string-to-a-number
-
         public static CosmosDog ConvertToCosmosDog (Dog dog)
         {
             var myIdString = (dog.Id).ToString();
