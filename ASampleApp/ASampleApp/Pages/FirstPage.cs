@@ -2,12 +2,13 @@
 using System.Threading.Tasks;
 using ASampleApp.BlobStorage;
 using ASampleApp.Pages;
+using Microsoft.Azure.Mobile.Crashes;
 using Xamarin.Forms;
 namespace ASampleApp
 {
 	public class FirstPage : BaseContentPage<FirstViewModel>
 	{
-
+        Button _crashButton;
 
 		Label _firstLabel;
 		Entry _firstEntry;
@@ -34,6 +35,14 @@ namespace ASampleApp
 
             this.Title = "A Sample App 16";
 
+            //CREATE A BUTTON THAT CRASHES THE APP FOR MOBILE CENTER
+			_crashButton = new Button
+			{
+				Text = "Click to Crash App",
+				//TextColor = Color.White,
+				//BackgroundColor = Color.Transparent
+                //AutomationId = AutomationIdConstants.CrashButton
+			};
 
 			//METHOD#1 non-MVVM
 			//BindingContext = new FirstViewModel ();
@@ -46,8 +55,9 @@ namespace ASampleApp
 			_emptyLabel = new Label () { Text = " " };
 			_emptyLabel2 = new Label() { Text = " " };
 
+			
 
-            //ADD PHOTO BUTTONS
+			//ADD PHOTO BUTTONS
 			_addAddDogPhotoButton = new Button() { Text = "Add Dog Photo" };
             _addAddDogPhotoURLButton = new Button { Text = "Add Dog Photo URL" };
 			_addAddDogPhotoBase64Button = new Button { Text = "Add Dog Photo Base64" };
@@ -87,9 +97,14 @@ namespace ASampleApp
 					//_addAddDogPhotoBase64Button,
 					//_goToDogPhotoBase64ListButton
                     _addAddDogPhotoBlobButton,
-                    _goToDogPhotoBlobListButton
+                    _goToDogPhotoBlobListButton,
+					_emptyLabel2,
+					_crashButton
 
-				}
+
+
+
+		}
             
             };
 
@@ -132,6 +147,8 @@ namespace ASampleApp
             _addAddDogPhotoBlobButton.Clicked += OnAddDogPhotoBlobButtonClicked;
             _goToDogPhotoBlobListButton.Clicked += OnAddDogPhotoBlogListButtonClicked;
 
+            _crashButton.Clicked += OnCrashButtonClicked;
+
 
 
 		}
@@ -152,6 +169,15 @@ namespace ASampleApp
 	//		_goToDogPhotoBase64ListButton.Clicked -= OnAddDogPhotoBase64ListButtonClicked;
 			_addAddDogPhotoBlobButton.Clicked -= OnAddDogPhotoBlobButtonClicked;
 			_goToDogPhotoBlobListButton.Clicked -= OnAddDogPhotoBlogListButtonClicked;
+
+			_crashButton.Clicked -= OnCrashButtonClicked;
+
+		}
+
+		private void OnCrashButtonClicked(object sender, EventArgs e)
+		{
+			Crashes.GenerateTestCrash();
+			throw new Exception("Crash Button Tapped");
 		}
 
 		private void OnAddDogPhotoButtonClicked(object sender, EventArgs e)

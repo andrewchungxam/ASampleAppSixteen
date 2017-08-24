@@ -43,6 +43,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Data\DogRepositoryBlob.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\DogListPhotoBlobPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DogListPhotoBlobViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\ASampleAppConstants.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Models\" />
@@ -52,5 +53,6 @@
     <Folder Include="$(MSBuildThisFileDirectory)Pages\Base\" />
     <Folder Include="$(MSBuildThisFileDirectory)ViewModels\Base\" />
     <Folder Include="$(MSBuildThisFileDirectory)ViewModels\Helper\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Constants\" />
   </ItemGroup>
 </Project>

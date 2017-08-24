@@ -1,4 +1,17 @@
-﻿
+﻿using System;
+namespace ASampleApp.BlobStorage
+{
+	public static class AzureBlobConstants
+	{
+
+		public static String BlobUrlAndKey = "DefaultEndpointsProtocol=https;AccountName=YOURAPPNAMEHERE;AccountKey=ASDFASDFASDFADFAFASSDFQ==";
+
+	}
+}
+
+
+
+
 //using System;
 //namespace ASampleApp.BlobStorage
 //{

@@ -8,6 +8,11 @@ using ASampleApp.Models;
 using ASampleApp.Pages;
 using Microsoft.WindowsAzure.Storage.Blob;
 using Xamarin.Forms;
+using ASampleApp.Constants;
+
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
 
 namespace ASampleApp
 {
@@ -72,6 +77,15 @@ namespace ASampleApp
         protected override void OnStart ()
 		{
 			// Handle when your app starts
+			//MobileCenter.Start("ios=294968e2-d712-43fc-a8bd-1492ed9ea29c;" +
+			//"uwp={Your UWP App secret here};" +
+			//"android={Your Android App secret here}",
+			//typeof(Analytics), typeof(Crashes));
+
+            MobileCenter.Start(ASampleAppConstants.MobileCenterIOS +
+				   "uwp={Your UWP App secret here};" +
+				   "android={Your Android App secret here}",
+				   typeof(Analytics), typeof(Crashes));
 		}
 
 		protected override void OnSleep ()
