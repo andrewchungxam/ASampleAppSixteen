@@ -64,7 +64,7 @@ namespace ASampleApp
             //point 2
             App.DogPhotoRep.AddNewDogPhotoSourcePhoto(this.FirstEntryText, this.SecondEntryText, this.PhotoSourceEntry);
             AddLastDogToCosmosDBAsync();
-			string _lastNameString = App.DogRep.GetLastDog ().Name;
+			string _lastNameString = App.DogPhotoRep.GetLastDogPhoto().Name;
 			string _lastNameStringAdd = System.String.Format ("{0} added to the list!", _lastNameString);
 			this.FirstLabel = _lastNameStringAdd;
 

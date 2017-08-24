@@ -48,7 +48,7 @@ namespace ASampleApp
             MyCloudBlobClient = MyAzureBlobStorage.CreateCloudBlobClient();
             MyCloudBlobContainer = MyAzureBlobStorage.CreateCloudBlobClientAndContainer(ContainerName);
 
-            string dbPath = FileAccessHelper.GetLocalFilePath("adog2.db3");
+            string dbPath = FileAccessHelper.GetLocalFilePath("asa16dog6.db3");
             //USE THIS FOR LIST PAGE
             DogRep = new DogRepository(dbPath);
 
@@ -63,6 +63,7 @@ namespace ASampleApp
 			var applicationStartPage = new FirstPage ();
 
             var myNavigationPage = new NavigationPage(applicationStartPage);
+
             MainPage = myNavigationPage;
 
             //Initialize Dog Photo View Page

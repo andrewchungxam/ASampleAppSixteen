@@ -35,6 +35,8 @@ namespace ASampleApp
 
             this.Title = "A Sample App 16";
 
+		
+
             //CREATE A BUTTON THAT CRASHES THE APP FOR MOBILE CENTER
 			_crashButton = new Button
 			{
@@ -133,6 +135,10 @@ namespace ASampleApp
                 _secondEntry.Text = string.Empty;
             }
 
+			if (_firstLabel.Text != null)
+			{
+				_firstLabel.Text = string.Empty;
+			}
 
 
 			//METHOD 1

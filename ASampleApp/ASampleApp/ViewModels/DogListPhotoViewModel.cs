@@ -21,7 +21,7 @@ namespace ASampleApp
 		{
 			//https://stackoverflow.com/questions/5561156/convert-listt-to-observablecollectiont-in-wp7
 			var list = new List<Dog> { };
-			list = App.DogRep.GetAllDogs ();
+            list = App.DogPhotoRep.GetAllDogsPhoto ();
 
 			_observableCollectionOfDogs = new ObservableCollection<Dog>();
 

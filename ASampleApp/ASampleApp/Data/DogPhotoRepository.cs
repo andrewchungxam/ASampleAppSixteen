@@ -22,7 +22,7 @@ namespace ASampleApp.Data
 
 			if (!list.Any()) //if LIST == EMPTY
 			{
-				var myListOfCosmosDogs = Task.Run(async () => await CosmosDB.CosmosDBService.GetAllCosmosDogs()).Result;
+                var myListOfCosmosDogs = Task.Run(async () => await CosmosDB.CosmosDBServicePhoto.GetAllCosmosDogs()).Result;
 				foreach (var item in myListOfCosmosDogs)
 				{
 					var tempDog = CosmosDB.DogConverter.ConvertToDog(item);

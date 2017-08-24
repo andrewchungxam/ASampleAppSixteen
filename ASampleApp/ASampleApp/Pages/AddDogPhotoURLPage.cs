@@ -21,7 +21,7 @@ namespace ASampleApp
 			_firstEntry = new Entry () { Placeholder = "Dog Name" };
 			_secondEntry = new Entry () { Placeholder = "Fur color" };
 			_photoURLEntry = new Entry () { Placeholder = "Dog URL"};
-			_firstButton = new Button () { Text = "Button" };
+			_firstButton = new Button () { Text = "Submit" };
             _dogImage = new Image() { };
 
 			_firstLabel.SetBinding (Label.TextProperty, nameof (MyViewModel.FirstLabel), BindingMode.TwoWay);
